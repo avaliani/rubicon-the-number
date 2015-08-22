@@ -1,0 +1,37 @@
+[
+  {
+    "level": 1,
+    "tasks": [
+      {
+        "label": "SSN + ID Card",
+        "description": "You have to have a valid social security card and ID card. You can verify with any staff.",
+      },
+      {
+        "label": "Typing Assessment",
+        "description": "Complete a typing assessment at <a href=\"www.Typingtest.com\">www.Typingtest.com</a> in the computer lab. Verification required. Please see Rasheeda for details. 3 minute assessment using any story. Please record results on task list or print results and place in Task List Drop Box (located behind Computer Lab Instructors desk).",
+        "onApprovalRequest": {
+          "input": {
+            "label": "First assessment WPM",
+            "type": "text"
+          }
+        }
+      },
+    ]
+  },
+  {
+    "level": 2,
+    "tasks": [
+      {
+        "label": "16 Personalities Assessment",
+        "bonus": 75,
+        "description": "Go to <a href=\"16personalities.com\">16personalities.com</a> and complete the free assessment. This is an extended version of the Brain Typing Questionnaire. Jot down your 4 letters and send your results to your email.",
+        "onApprovalRequest": {
+          "input": {
+            "label": "Personality Type Letters",
+            "type": "text"
+          }
+        }
+      }
+    ]
+  },
+]
