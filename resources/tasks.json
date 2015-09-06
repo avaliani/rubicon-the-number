@@ -4,34 +4,146 @@
     "tasks": [
       {
         "label": "SSN + ID Card",
-        "description": "You have to have a valid social security card and ID card. You can verify with any staff.",
+        "description": "You have to have a valid social security card and ID card. You can verify with any staff. If you've submitted this at intake, this will be counted."
       },
       {
         "label": "Typing Assessment",
-        "description": "Complete a typing assessment at <a href=\"www.Typingtest.com\">www.Typingtest.com</a> in the computer lab. Verification required. Please see Rasheeda for details. 3 minute assessment using any story. Please record results on task list or print results and place in Task List Drop Box (located behind Computer Lab Instructors desk).",
+        "description": "Complete a typing assessment at <a href=\"www.Typingtest.com\">www.Typingtest.com</a> in the computer lab. \n Once on the website, seleect English as the language and choose the 3-minute assessment. Choose any story option. Write the results below. Print results and place in Task List Drop Box (located behind Computer Lab Instructors desk).",
         "onApprovalRequest": {
-          "input": {
-            "label": "First assessment WPM",
-            "type": "text"
-          }
+          "inputs": [
+            {
+              "label": "First assessment WPM",
+              "type": "text"
+            }
+          ]
         }
       },
+      {
+        "label": "Professional E-mail",
+        "description": "Set up a professional e-mail account. If you already have an e-mail account, please follow the listed instructions for how to verify by sending an email. Ex: my prescious3298@yahoo.com is NOT professional. Print out a blank email you've sent to a Rubicon staff member with the subject Test Message."
+      },
+      {
+        "label": "Current Schedule",
+        "description": "Put together a weekly schedule. Use a blank “Current Schedule” document and fill in every time slot. Verify all time slots are filled in. Make a copy of the schedule for yourself and keep the original. Place copy in Task List Drop Box (located behind Computer Lab Instructors desk)."
+      },
+      {
+        "label": "The Number",
+        "description": "What’s your sufficiency number? How much do you have to earn to comfortably take care of you and your family? Complete this assessment at <a href=\"www.insightcced.org/calculator.html\">www.insightcced.org/calculator.html</a> Please print 2 copies. Keep one for yourself and place the other in Task List Drop Box (located behind Computer Lab Instructors desk). "
+      },
+      {
+        "label": "Complete Master Application",
+        "description": "Complete a master application using the blank Master Schedule document. It must be filled out completely or you will not get credit. This is a valuable job search tool and your toughest assignment. Please make a copy and keep the original. Please place copy in Task List Drop Box (located behind Computer Lab Instructors desk)."
+      }
     ]
   },
   {
     "level": 2,
     "tasks": [
       {
+        "label": "Top 10 Goals",
+        "description": "Complete Goals Worksheet. List at least 7 goals you want to accomplish in the next year. Make a copy of thee goals worksheet and you keep the original. Place copy in Task List Drop Box (located behind Computer Lab Instructors desk)."
+      },
+      {
         "label": "16 Personalities Assessment",
         "bonus": 75,
-        "description": "Go to <a href=\"16personalities.com\">16personalities.com</a> and complete the free assessment. This is an extended version of the Brain Typing Questionnaire. Jot down your 4 letters and send your results to your email.",
+        "description": "Go to <a href=\"16personalities.com\">16personalities.com</a> and complete the free assessment. This is an extended version of the Brain Typing Questionnaire. Enter your 4 letters and send your results to your email. Write your results below and print a copy of your results and place this in the Task List Drop Box (located behind Computer Lab Instructors desk).",
         "onApprovalRequest": {
           "input": {
             "label": "Personality Type Letters",
             "type": "text"
           }
         }
+      },
+      {
+        "label": "Barriers Assessment",
+        "description": "Complete the Barriers Assessment. Instructions are located on the worksheet.List one barrier you can address right NOW. Then write out 2 action steps you can take today or this week. Keep the original and make a copy. Please place copy in Task List Drop Box (located behind Computer Lab Instructors desk).",
+        "onApprovalRequest": {
+          "inputs": [
+            {
+              "label": "Barrier",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Increase Typing Speed by 25%",
+        "description": "Complete a second typing assessment at <a href=\"www.Typingtest.com\">www.Typingtest.com</a> in the computer lab. \n Once on the website, seleect English as the language and choose the 3-minute assessment. Choose any story option. Print results and make sure you have improved by at least 25% from your first typing test in Level 1. Write your results below and place test results in Task List Drop Box (located behind Computer Lab Instructors desk).",
+        "onApprovalRequest": {
+          "inputs": [
+            {
+              "label": "First Typing Assessment WPM",
+              "type": "text"
+            },
+            {
+              "label": "Second Typing Assessment WPM",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Email Practice Session 1",
+        "description": "You must be able to \"download\" a file, \"attach\" a file to an e-mail, and send that e-mail to Rasheeda@rubiconprograms.org. Please see staff member if you need additional instructions. Please print a copy of the email sent and make sure you've  attached a file and sent it with an appropriate message."
+      },
+      {
+        "label": "Complete Resume 1st Draft",
+        "description": "Complete your first resume. Please ask Computer Lab Coordinator or Rubicon staff member for resume templates. It must be in digital format to get credit. Send the digitial copy of your resume to rasheedad@rubiconprograms.org. Please print a copy and place copy in Task List Drop Box (located behind Computer Lab Instructors desk)."
+      },
+      {
+        "label": "Interview Prep Worksheet",
+        "description": "Complete the Interview Prep Worksheet. Instructions are located on the worksheet. Please make a copy and keep the original. Please place copy in Task List Drop Box (located behind Computer Lab Instructors desk)."
+      },
+      {
+        "label": "Future Career Research",
+        "description": "Research a future career at <a href=\"http://onetonline.org\">www.onetonline.org</a>. You must complete the Future Career Research worksheet. Please make a copy and keep the original. Please place copy in Task List Drop Box (located behind Computer Lab Instructors desk)."
       }
     ]
   },
+  {
+    "level": 3,
+    "tasks": [
+      {
+        "label": "Rat Park",
+        "bonus": 150,
+        "description": "Read comic found on Stuart McMillen’s website. On the surface, it covers addiction, but there’s a deeper message. Use Google to find it. Complete Side Project worksheet. Make a copy of the Side Project Worksheet. Keep the original and place copy in Task List Drop Box (located behind Computer Lab Instructors desk)."
+      },
+      {
+        "label": "Increase Typing Speed by 50%",
+        "bonus": 500,
+        "description": "Retake the typing test. List your Level 1 and 2 results first. Print results and place in Task List Drop Box (located behind Computer Lab Instructors desk).",
+        "onApprovalRequest": {
+          "inputs": [
+            {
+              "label": "First Typing Assessment WPM",
+              "type": "text"
+            },
+            {
+              "label": "Second Typing Assessment WPM",
+              "type": "text"
+            },
+            {
+              "label": "Third Typing Assessment WPM",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      {
+        "label": "Read The 5 Chimps Report",
+        "bonus": 400,
+        "description": "Google “5 chimps report pdf”, download the PDF, and read it in its entirety. You can read it in the computer lab or download to your phone. Ask a staff member for help if you need it. Complete Side Project worksheet. Make a copy of the Side Project Worksheet. Keep the original and place copy in Task List Drop Box (located behind Computer Lab Instructors desk)."
+      },
+      {
+        "label": "The Cain Conversation with Gary Vaynerchuk",
+        "bonus": 300,
+        "description": "Google “gary cain conversation” – the video is just over 40 minutes long. Please complete the Side Project worksheet. Make a copy of the Side Project Worksheet. Keep the original and place copy in Task List Drop Box (located behind Computer Lab Instructors desk)."
+      },
+      {
+        "label": "Credit Score",
+        "bonus": 250,
+        "description": "You can go to <a href=\"www.quizzle.com\">www.quizzle.com</a> or <a href=\"www.annualcreditreport.com\">wwww.annualcreditreport.com</a>. Please see a staff member for assistance and verification. Make a copy of the online credit score. Keep the original and place copy in Task List Drop Box (located behind Computer Lab Instructors desk)."
+      }
+    ]
+  }
 ]
