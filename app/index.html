@@ -27,18 +27,19 @@
 </head>
 <body ng-cloak>
 
-  <ul class="menu">
+  <ul class="menu" ng-show="loggedIn">
     <li><a href="#/home">home</a></li>
     <li><a href="#/chat">chat</a></li>
     <li ng-hide="loggedIn"><a href="#/login">login</a></li>
     <li ng-show="loggedIn"><a href="#/account">account</a></li>
   </ul>
 
-  <div class="container-fluid">
+  <div class="container" ng-show="loggedIn">
     <div ng-view></div>
   </div>
 
-  <div>AngularFire-seed v<span app-version></span></div>
+  <div data-ng-include="'login/login.html'" ng-show="!loggedIn"></div>
+
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->

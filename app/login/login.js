@@ -1,31 +1,37 @@
 "use strict";
 angular.module('myApp.login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
 
-  .config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/login', {
-      controller: 'LoginCtrl',
-      templateUrl: 'login/login.html'
-    });
-  }])
+  // .config(['$routeProvider', function($routeProvider) {
+  //   $routeProvider.when('/login', {
+  //     controller: 'LoginCtrl',
+  //     templateUrl: 'login/login.html'
+  //   });
+  // }])
 
   .controller('LoginCtrl', ['$scope', 'Auth', '$location', 'fbutil', function($scope, Auth, $location, fbutil) {
-    $scope.email = null;
-    $scope.pass = null;
-    $scope.confirm = null;
-    $scope.createMode = false;
-
     $scope.login = function(email, pass) {
-      $scope.err = null;
+      $scope.msg = null;
       Auth.$authWithPassword({ email: email, password: pass }, {rememberMe: true})
         .then(function(/* user */) {
-          $location.path('/account');
+          resetPage();
+          $location.path('/home');
         }, function(err) {
-          $scope.err = errMessage(err);
+          $scope.msg = errMessage(err);
+        });
+    };
+
+    $scope.resetPassword = function(email) {
+      $scope.msg = null;
+      Auth.$resetPassword({ email: email })
+        .then(function(/* user */) {
+          $scope.msg = sucMessage("Password reset email sent successfully");
+        }, function(err) {
+          $scope.msg = errMessage(err);
         });
     };
 
     $scope.createAccount = function() {
-      $scope.err = null;
+      $scope.msg = null;
       if( assertValidAccountProps() ) {
         var email = $scope.email;
         var pass = $scope.pass;
@@ -43,29 +49,48 @@ angular.module('myApp.login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
             });
           })
           .then(function(/* user */) {
+            resetPage();
             // redirect to the account page
             $location.path('/account');
           }, function(err) {
-            $scope.err = errMessage(err);
+            $scope.msg = errMessage(err);
           });
       }
     };
 
     function assertValidAccountProps() {
       if( !$scope.email ) {
-        $scope.err = 'Please enter an email address';
+        $scope.msg = errMessage('Please enter an email address');
       }
       else if( !$scope.pass || !$scope.confirm ) {
-        $scope.err = 'Please enter a password';
+        $scope.msg = errMessage('Please enter a password');
       }
       else if( $scope.createMode && $scope.pass !== $scope.confirm ) {
-        $scope.err = 'Passwords do not match';
+        $scope.msg = errMessage('Passwords do not match');
       }
-      return !$scope.err;
+      return !$scope.msg;
+    }
+
+    function resetPage() {
+      $scope.createMode = false;
+      $scope.email = null;
+      $scope.pass = null;
+      $scope.confirm = null;
+      $scope.msg = null;
     }
 
     function errMessage(err) {
-      return angular.isObject(err) && err.code? err.code : err + '';
+      return {
+        type: 'danger',
+        text: angular.isObject(err) && err.code? err.code : err + ''
+      }
+    }
+
+    function sucMessage(str) {
+      return {
+        type: 'success',
+        text: str
+      }
     }
 
     function firstPartOfEmail(email) {
@@ -78,4 +103,6 @@ angular.module('myApp.login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
       var f = str.charAt(0).toUpperCase();
       return f + str.substr(1);
     }
+
+    resetPage();
   }]);
