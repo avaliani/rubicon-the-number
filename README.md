@@ -8,5 +8,6 @@ This app is a combination of the angularfire-seed and the yeoman angular seed.
 
 ```
 bower install
+npm install
 grunt serve
 ```
