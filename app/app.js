@@ -7,7 +7,11 @@ angular.module('myApp', [
     'myApp.home',
     'myApp.account',
     'myApp.chat',
-    'myApp.login'
+    'myApp.course',
+    'myApp.login',
+
+    'ngSanitize',
+    'ui.bootstrap'
   ])
 
   .config(['$routeProvider', function ($routeProvider) {

@@ -1,0 +1,15 @@
+<h2>The Numbers Course</h2>
+
+<uib-tabset>
+  <uib-tab ng-repeat="level in CONSTANTS.levels" heading="{{ level.label }}">
+
+    <ul class="tasks">
+      <li ng-repeat="task in tasksPerLevel[level.id]" class="task">
+        <h5>{{ task.label }}</h5>
+        <div ng-bind-html="task.description">
+        </div>
+      </li>
+    </ul>
+
+  </uib-tab>
+</uib-tabset>
