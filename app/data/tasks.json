@@ -8,7 +8,7 @@
       },
       {
         "label": "Typing Assessment",
-        "description": "Complete a typing assessment at <a href=\"www.Typingtest.com\">www.Typingtest.com</a> in the computer lab. \n Once on the website, seleect English as the language and choose the 3-minute assessment. Choose any story option. Write the results below. Print results and place in Task List Drop Box (located behind Computer Lab Instructors desk).",
+        "description": "Complete a typing assessment at <a href=\"http://www.Typingtest.com\">www.Typingtest.com</a> in the computer lab. \n Once on the website, seleect English as the language and choose the 3-minute assessment. Choose any story option. Write the results below. Print results and place in Task List Drop Box (located behind Computer Lab Instructors desk).",
         "onApprovalRequest": {
           "inputs": [
             {
@@ -28,7 +28,7 @@
       },
       {
         "label": "The Number",
-        "description": "What’s your sufficiency number? How much do you have to earn to comfortably take care of you and your family? Complete this assessment at <a href=\"www.insightcced.org/calculator.html\">www.insightcced.org/calculator.html</a> Please print 2 copies. Keep one for yourself and place the other in Task List Drop Box (located behind Computer Lab Instructors desk). "
+        "description": "What’s your sufficiency number? How much do you have to earn to comfortably take care of you and your family? Complete this assessment at <a href=\"http://www.insightcced.org/calculator.html\">www.insightcced.org/calculator.html</a> Please print 2 copies. Keep one for yourself and place the other in Task List Drop Box (located behind Computer Lab Instructors desk). "
       },
       {
         "label": "Complete Master Application",
@@ -46,7 +46,7 @@
       {
         "label": "16 Personalities Assessment",
         "bonus": 75,
-        "description": "Go to <a href=\"16personalities.com\">16personalities.com</a> and complete the free assessment. This is an extended version of the Brain Typing Questionnaire. Enter your 4 letters and send your results to your email. Write your results below and print a copy of your results and place this in the Task List Drop Box (located behind Computer Lab Instructors desk).",
+        "description": "Go to <a href=\"http://16personalities.com\">16personalities.com</a> and complete the free assessment. This is an extended version of the Brain Typing Questionnaire. Enter your 4 letters and send your results to your email. Write your results below and print a copy of your results and place this in the Task List Drop Box (located behind Computer Lab Instructors desk).",
         "onApprovalRequest": {
           "input": {
             "label": "Personality Type Letters",
@@ -68,7 +68,7 @@
       },
       {
         "label": "Increase Typing Speed by 25%",
-        "description": "Complete a second typing assessment at <a href=\"www.Typingtest.com\">www.Typingtest.com</a> in the computer lab. \n Once on the website, seleect English as the language and choose the 3-minute assessment. Choose any story option. Print results and make sure you have improved by at least 25% from your first typing test in Level 1. Write your results below and place test results in Task List Drop Box (located behind Computer Lab Instructors desk).",
+        "description": "Complete a second typing assessment at <a href=\"http://www.Typingtest.com\">www.Typingtest.com</a> in the computer lab. \n Once on the website, seleect English as the language and choose the 3-minute assessment. Choose any story option. Print results and make sure you have improved by at least 25% from your first typing test in Level 1. Write your results below and place test results in Task List Drop Box (located behind Computer Lab Instructors desk).",
         "onApprovalRequest": {
           "inputs": [
             {
@@ -142,7 +142,7 @@
       {
         "label": "Credit Score",
         "bonus": 250,
-        "description": "You can go to <a href=\"www.quizzle.com\">www.quizzle.com</a> or <a href=\"www.annualcreditreport.com\">wwww.annualcreditreport.com</a>. Please see a staff member for assistance and verification. Make a copy of the online credit score. Keep the original and place copy in Task List Drop Box (located behind Computer Lab Instructors desk)."
+        "description": "You can go to <a href=\"http://www.quizzle.com\">www.quizzle.com</a> or <a href=\"http://www.annualcreditreport.com\">wwww.annualcreditreport.com</a>. Please see a staff member for assistance and verification. Make a copy of the online credit score. Keep the original and place copy in Task List Drop Box (located behind Computer Lab Instructors desk)."
       }
     ]
   }

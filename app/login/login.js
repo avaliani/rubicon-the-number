@@ -1,6 +1,7 @@
 "use strict";
 angular.module('myApp.login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
 
+  // The login screen is explicitly included and hidden or shown in index.html.
   // .config(['$routeProvider', function($routeProvider) {
   //   $routeProvider.when('/login', {
   //     controller: 'LoginCtrl',
