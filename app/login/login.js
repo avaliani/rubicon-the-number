@@ -15,7 +15,7 @@ angular.module('myApp.login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
       Auth.$authWithPassword({ email: email, password: pass }, {rememberMe: true})
         .then(function(/* user */) {
           resetPage();
-          $location.path('/home');
+          $location.path('/');
         }, function(err) {
           $scope.msg = errMessage(err);
         });

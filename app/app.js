@@ -16,7 +16,7 @@ angular.module('myApp', [
 
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider.otherwise({
-      redirectTo: '/home'
+      redirectTo: '/course'
     });
   }])
 
