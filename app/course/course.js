@@ -61,11 +61,30 @@ angular.module('myApp.course', ['ngRoute'])
   }
 ])
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.whenAuthenticated('/course', {
-    templateUrl: 'course/course.html',
-    controller: 'CourseCtrl'
-  })
-}])
+.config([
+  '$routeProvider',
+  function($routeProvider) {
+    $routeProvider.when('/course', {
+      templateUrl: 'course/course.html',
+      controller: 'CourseCtrl',
+      resolve: {
+        // forces the page to wait for this promise to resolve before controller is loaded
+        // the controller can then inject `user` as a dependency. This could also be done
+        // in the controller, but this makes things cleaner (controller doesn't need to worry
+        // about auth status or timing of accessing data or displaying elements)
+        user: ['Auth', function (Auth) {
+          return Auth.$waitForAuth();
+        }]
+      }
+    });
+
+    // The call below uses Auth.$requireAuth() whereas the above does Auth.$waitForAuth. So the user
+    // promise is not rejected in the above. TODO(avaliani) Re-eval auth scheme.
+    //
+    // $routeProvider.whenAuthenticated('/course', {
+    //   templateUrl: 'course/course.html',
+    //   controller: 'CourseCtrl'
+    // })
+  }])
 
 ;
