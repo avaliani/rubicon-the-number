@@ -3,11 +3,17 @@
 angular.module('myApp.header', [])
 
 .controller('HeaderCtrl', [
-  '$scope', 'Auth', '$firebaseObject', 'fbutil',
-  function($scope, Auth, $firebaseObject, fbutil) {
+  '$scope', 'Auth', '$firebaseObject', 'fbutil', '$window',
+  function($scope, Auth, $firebaseObject, fbutil, $window) {
     var user;
 
     Auth.$onAuth(authUpdated);
+
+    $scope.logout = function() {
+      // Difficult to get every view controller / directive to listen for auth changes. Do a hard reset of the app.
+      Auth.$unauth();
+      $window.location.reload();
+    };
 
     function authUpdated(authInfo) {
       if (authInfo) {
@@ -16,11 +22,15 @@ angular.module('myApp.header', [])
           $scope.user = user;
         });
       } else {
-        if (user) {
-          user.$destroy();
-        }
-        user = $scope.user = null;
+        unbindUser();
       }
+    }
+
+    function unbindUser() {
+      if (user) {
+        user.$destroy();
+      }
+      user = $scope.user = null;
     }
   }])
 
