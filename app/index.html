@@ -27,14 +27,11 @@
 </head>
 <body ng-cloak>
 
-  <div data-ng-include="'layout/header.html'" ng-if="loggedIn"></div>
+  <div data-ng-include="'layout/header.html'"></div>
 
-  <div class="container content" ng-show="loggedIn">
+  <div class="container content">
     <div ng-view></div>
   </div>
-
-  <div data-ng-include="'login/login.html'" ng-show="!loggedIn"></div>
-
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -82,7 +79,7 @@
     <script src="components/security/security.js"></script>
     <script src="config.js"></script>
     <script src="course/course.js"></script>
-    <script src="home/home.js"></script>
+    <script src="layout/header.js"></script>
     <script src="login/login.js"></script>
     <!-- /include -->
     <!-- endbuild -->
