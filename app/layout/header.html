@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top" ng-controller="HeaderCtrl">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -23,9 +23,9 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form> -->
 
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right" ng-show="user">
         <li uib-dropdown>
-          <a href uib-dropdown-toggle>User name <span class="caret"></span></a>
+          <a href uib-dropdown-toggle>{{ user.name }} <span class="caret"></span></a>
           <ul class="uib-dropdown-menu">
             <li><a href="#/account">Settings</a></li>
             <li role="separator" class="divider"></li>
