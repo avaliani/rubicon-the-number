@@ -14,9 +14,11 @@ angular.module('myApp', [
     'ui.bootstrap'
   ])
 
-  .config(['$routeProvider', function ($routeProvider) {
+  .config([
+    '$routeProvider', 'defaultPath',
+    function ($routeProvider, defaultPath) {
     $routeProvider.otherwise({
-      redirectTo: '/course'
+      redirectTo: defaultPath
     });
   }])
 

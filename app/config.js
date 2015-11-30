@@ -10,6 +10,9 @@ angular.module('myApp.config', [])
   // where to redirect users if they need to authenticate (see security.js)
   .constant('loginRedirectPath', '/login')
 
+  // The first page users see upon login.
+  .constant('defaultPath', '/course')
+
   // your Firebase data URL goes here, no trailing slash
   .constant('FBURL', 'https://torrid-heat-8062.firebaseio.com')
 
