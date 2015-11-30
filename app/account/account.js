@@ -3,11 +3,11 @@
 
   var app = angular.module('myApp.account', ['firebase', 'firebase.utils', 'firebase.auth', 'ngRoute']);
 
-  app.controller('AccountCtrl', ['$scope', 'Auth', 'fbutil', 'user', '$location', '$firebaseObject',
-    function($scope, Auth, fbutil, user, $location, $firebaseObject) {
+  app.controller('AccountCtrl', ['$scope', 'Auth', 'fbutil', 'authInfo', '$location', '$firebaseObject',
+    function($scope, Auth, fbutil, authInfo, $location, $firebaseObject) {
       var unbind;
       // create a 3-way binding with the user profile object in Firebase
-      var profile = $firebaseObject(fbutil.ref('users', user.uid));
+      var profile = $firebaseObject(fbutil.ref('users', authInfo.uid));
       profile.$bindTo($scope, 'profile').then(function(ub) { unbind = ub; });
 
       // expose logout function to scope
@@ -45,7 +45,7 @@
           .then(function() {
             // store the new email address in the user's profile
             return fbutil.handler(function(done) {
-              fbutil.ref('users', user.uid, 'email').set(newEmail, done);
+              fbutil.ref('users', authInfo.uid, 'email').set(newEmail, done);
             });
           })
           .then(function() {

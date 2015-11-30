@@ -1,21 +1,43 @@
 "use strict";
+
 angular.module('myApp.login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
 
-  // The login screen is explicitly included and hidden or shown in index.html.
-  // .config(['$routeProvider', function($routeProvider) {
-  //   $routeProvider.when('/login', {
-  //     controller: 'LoginCtrl',
-  //     templateUrl: 'login/login.html'
-  //   });
-  // }])
+.config(['$routeProvider', function($routeProvider) {
+  $routeProvider.when('/login', {
+    controller: 'LoginCtrl',
+    templateUrl: 'login/login.html',
+    resolve: {
+      authInfo: ['Auth', function (Auth) {
+        return Auth.$waitForAuth();
+      }]
+    }
+  });
 
-  .controller('LoginCtrl', ['$scope', 'Auth', '$location', 'fbutil', function($scope, Auth, $location, fbutil) {
+}])
+
+.controller('LoginCtrl', [
+  '$scope', 'authInfo', 'Auth', '$location', 'fbutil', '$routeParams',
+  function($scope, authInfo, Auth, $location, fbutil, $routeParams) {
+    function init() {
+      if (authInfo) {
+        redirectAfterLogin();
+      }
+    }
+
+    function redirectAfterLogin() {
+      var url = $routeParams['url'];
+      if (url) {
+        $location.url(decodeURIComponent(url));
+      } else {
+        $location.url('/');
+      }
+    }
+
     $scope.login = function(email, pass) {
       $scope.msg = null;
       Auth.$authWithPassword({ email: email, password: pass }, {rememberMe: true})
         .then(function(/* user */) {
-          resetPage();
-          $location.path('/');
+          redirectAfterLogin();
         }, function(err) {
           $scope.msg = errMessage(err);
         });
@@ -42,15 +64,14 @@ angular.module('myApp.login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
             // authenticate so we have permission to write to Firebase
             return Auth.$authWithPassword({ email: email, password: pass });
           })
-          .then(function(user) {
+          .then(function(authInfo) {
             // create a user profile in our data store
-            var ref = fbutil.ref('users', user.uid);
+            var ref = fbutil.ref('users', authInfo.uid);
             return fbutil.handler(function(cb) {
               ref.set({email: email, name: name||firstPartOfEmail(email)}, cb);
             });
           })
           .then(function(/* user */) {
-            resetPage();
             // redirect to the account page
             $location.path('/account');
           }, function(err) {
@@ -70,14 +91,6 @@ angular.module('myApp.login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
         $scope.msg = errMessage('Passwords do not match');
       }
       return !$scope.msg;
-    }
-
-    function resetPage() {
-      $scope.createMode = false;
-      $scope.email = null;
-      $scope.pass = null;
-      $scope.confirm = null;
-      $scope.msg = null;
     }
 
     function errMessage(err) {
@@ -105,5 +118,7 @@ angular.module('myApp.login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
       return f + str.substr(1);
     }
 
-    resetPage();
-  }]);
+    init();
+  }])
+
+;

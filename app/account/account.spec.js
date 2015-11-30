@@ -10,7 +10,7 @@ describe('myApp.account', function() {
     beforeEach(function() {
       module(function($provide) {
         // comes from routes.js in the resolve: {} attribute
-        $provide.value('user', {uid: 'test123'});
+        $provide.value('authInfo', {uid: 'test123'});
       });
 
       inject(function($controller) {
